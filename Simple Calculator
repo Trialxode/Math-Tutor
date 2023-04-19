@@ -1,0 +1,130 @@
+#include<iostream>
+#include<cstdlib>
+#include<ctime>
+#include<stdio.h>
+using namespace std;
+
+/* Write a program that can be used as a math tutor for a young student.The program should
+display two random numbers to be added, subtracted, multiplied, and divided. The program should then pause while the students work
+on the problem. When the student is ready to check the answer, he or she can press a key 
+and the program will display the correct solution */
+
+int main() {
+	srand(time(0)); //sets the initial point for generating pseudo-random number with time(0) as seeding 
+	int x = (rand() % 1000) + 1; //used without seeding, generates the same number each run ranging from 1 through 1000
+	int y = (rand() % 1000) + 1;
+	char again;
+	int user_choice;
+	cout << "Please select an option from the menu:\n";
+	cout << "1. Learn Addition\n";
+	cout << "2. Learn Subtraction\n";
+	cout << "3. Learn Multiplication\n";
+	cout << "4. Learn Division\n";
+	cout << "5. Quit" << endl;
+	cout << "\nEnter your choice: ";
+	cin >> user_choice;
+	switch (user_choice) {
+	case 1:
+		cout << "\nHere is your addition problem." << endl;
+		cout << "What is " << x << " + " << y << "?" << endl;
+		system("pause");
+		cout << "\nAnswer: " << x + y << endl;
+		cout << "\nWould you like to practice more? Y or N: ";
+		cin >> again;
+		if (again == 'Y' || again == 'y') {
+			x = (rand() % 1000) + 1;
+			y = (rand() % 1000) + 1;
+			cout << "Here is your addition problem." << endl;
+			cout << "What is " << x << " + " << y << "?" << endl;
+			system("pause");
+			cout << "\nAnswer: " << x + y << endl;
+			cout << "\nWould you like to practice more? Y or N: ";
+			cin >> again;
+		}
+		if(again == 'N' || again == 'n'){
+			cout << "\nThanks for using Math Tutor!" << endl;
+		}
+		else {
+			cout << "\nInvalid option. Try Again." << endl;
+		}
+		break;
+	case 2:
+		cout << "Here is your subtraction problem." << endl;
+		cout << "What is " << x << " - " << y << "?" << endl;
+		system("pause");
+		cout << "\nAnswer: " << x - y << endl;
+		cout << "\nWould you like to practice more? Y or N: ";
+		cin >> again;
+		if (again == 'Y' || again == 'y') {
+			x = (rand() % 1000) + 1;
+			y = (rand() % 1000) + 1;
+			cout << "Here is your subtraction problem." << endl;
+			cout << "What is " << x << " - " << y << "?" << endl;
+			system("pause");
+			cout << "\nAnswer: " << x - y << endl;
+			cout << "\nWould you like to practice more? Y or N: ";
+			cin >> again;
+		}
+		if (again == 'N' || again == 'n') {
+			cout << "\nThanks for using Math Tutor!" << endl;
+		}
+		else {
+			cout << "\nInvalid option. Try Again." << endl;
+		}
+		break;
+	case 3:
+		cout << "Here is your multiplication problem." << endl;
+		cout << "What is " << x << " x " << y << "?" << endl;
+		system("pause");
+		cout << "\nAnswer: " << x * y << endl;
+		cout << "\nWould you like to practice more? Y or N: ";
+		cin >> again;
+		if (again == 'Y' || again == 'y') {
+			x = (rand() % 1000) + 1;
+			y = (rand() % 1000) + 1;
+			cout << "Here is your multiplication problem." << endl;
+			cout << "What is " << x << " x " << y << "?" << endl;
+			system("pause");
+			cout << "\nAnswer: " << x * y << endl;
+			cout << "\nWould you like to practice more? Y or N: ";
+			cin >> again;
+		}
+		if (again == 'N' || again == 'n') {
+			cout << "\nThanks for using Math Tutor!" << endl;
+		}
+		else {
+			cout << "\nInvalid option. Try Again." << endl;
+		}
+		break;
+	case 4:
+		cout << "Here is your division problem." << endl;
+		cout << "What is " << x << " / " << y << "?" << endl;
+		system("pause");
+		cout << "\nAnswer: " << x / y << endl;
+		cout << "\nWould you like to practice more? Y or N: ";
+		cin >> again;
+		if (again == 'Y' || again == 'y') {
+			x = (rand() % 1000) + 1;
+			y = (rand() % 1000) + 1;
+			cout << "Here is your division problem." << endl;
+			cout << "What is " << x << " / " << y << "?" << endl;
+			system("pause");
+			cout << "\nAnswer: " << x / y << endl;
+			cout << "\nWould you like to practice more? Y or N: ";
+			cin >> again;
+		}
+		if (again == 'N' || again == 'n') {
+			cout << "\nThanks for using Math Tutor!" << endl;
+		}
+		else {
+			cout << "\nInvalid option. Try Again." << endl;
+		}
+		break;
+	case 5:
+		cout << "\nQuitting Math Tutor...." << endl;
+		break;
+	default:
+		cout << "\nInvalid menu option." << endl;
+	}
+	return 0;
+}
